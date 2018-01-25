@@ -1,0 +1,7 @@
+*.log
+*.log.*
+.vscode
+frontend/assets
+frontend/build
+frontend/source
+node_modules

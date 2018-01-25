@@ -1,0 +1,23 @@
+metadata:
+  home: http://vit.to
+  lang: it
+  locale: it_IT
+  repo: https://github.com/vitto/workshop-bem-and-sass
+  title: Workshop SASS for BEM development with Vittorio Vittori @ CSSDay 2018
+  social:
+    facebook: https://www.facebook.com/vttrx
+    instagram: https://www.instagram.com/vttrx
+    pinterest: https://it.pinterest.com/vttr
+    twitter: https://twitter.com/vttrx
+    messenger: https://www.messenger.com/t/vttrx
+clean: true
+source: ../node_modules/metalsmith/source
+destination: build
+markdown:
+  smartypants: true
+  gfm: true
+  tables: true
+twig:
+  directory: twig
+  view: default.twig
+  cache: false
