@@ -1,3 +1,34 @@
 <div>
-  tooltip
+  <a href="#" class="button button--inline button--action tooltip">
+    Tooltip
+    <div class="tooltip__container">
+      <div class="tooltip__balloon">
+        Hello, this is a tooltip message, yes I know, it's very cool!
+      </div>
+    </div>
+  </a>
+
+  <a href="#" class="button button--inline button--action tooltip">
+    Tooltip rich
+    <div class="tooltip__container">
+      <div class="tooltip__balloon">
+        <div class="tooltip__title">
+          Important notice
+        </div>
+        <p class="tooltip__text">
+          Ahem, sorry, I just forgot what the notice was.
+        </p>
+      </div>
+    </div>
+  </a>
+
 </div>
+
+<a href="#" class="button button--inline button--action tooltip tooltip--show" style="margin-top: 64px;">
+    Tooltip shown by default
+    <div class="tooltip__container">
+      <div class="tooltip__balloon">
+        This is a tooltip opened by default.
+      </div>
+    </div>
+  </a>

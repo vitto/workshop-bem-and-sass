@@ -34,16 +34,19 @@
     }
   }
 
-  &:first-child {
-    @include element ('balloon') {
-      $offset: $arrow-size * 4;
-      transform: translate(-($offset), 0);
+  @include modifier ('compress') {
+    &:first-child {
+      @include element ('balloon') {
+        $offset: $arrow-size * 4;
+        transform: translate(-($offset), 0);
 
-      &::after {
-        left: $offset;
+        &::after {
+          left: $offset;
+        }
       }
     }
   }
+
 
   @include element ('container') {
     bottom: 100%;
@@ -68,6 +71,7 @@
     padding: s(0.5) s(0.75);
     position: relative;
     transform: translate(-50%, 0);
+    white-space: normal;
     width: $width;
 
     &::after {

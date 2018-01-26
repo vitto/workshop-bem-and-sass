@@ -4,6 +4,10 @@
   $default-background-hover: $color-tundora;
   $default-text: $color-white;
 
+  $action-background: $color-curious-blue;
+  $action-background-hover: mix($color-curious-blue, $color-tundora, 80%);
+  $action-text: $color-white;
+
   $outline-background: $color-white;
   $outline-border: $color-scorpion;
   $outline-border-hover: $color-tundora;
@@ -86,6 +90,16 @@
     &:hover {
       border-color: $outline-border-hover;
       color: $outline-text-hover;
+    }
+  }
+
+  @include modifier ('action') {
+    background-color: $action-background;
+    color: $action-text;
+
+    &:hover {
+      background-color: $action-background-hover;
+      color: $action-text;
     }
   }
 }
