@@ -11,7 +11,14 @@
     <link rel="stylesheet" href="{{ relativePath }}css/style.css?v={{ global.faker.random.uuid }}">
   </head>
 
-  <body class="body">
-    {% include 'includes/wrapper.twig' with { 'blockName': 'tooltip' } %}
+  <body class="layout-body">
+    {% include 'includes/header.twig' %}
+
+    <main class="layout-limiter">
+      {% include 'includes/wrapper.twig' with { 'blockName': 'button' } %}
+      {% include 'includes/wrapper.twig' with { 'blockName': 'tooltip' } %}
+    </main>
+
+    {% include 'includes/footer.twig' %}
   </body>
 </html>

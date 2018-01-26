@@ -15,6 +15,7 @@ const __dist = path.join(__modules, '/metalsmith/assets')
 const __images = path.join(__dirname, '/img')
 const __js = path.join(__dirname, '/js')
 const __sass = path.join(__dirname, '/sass')
+const __twig = path.join(__dirname, '/twig')
 const publicPath = path.join(__dirname, '../')
 const basePath = '/'
 
@@ -108,6 +109,9 @@ module.exports = function (env) {
               presets: ['es2015']
             }
           }
+        }, {
+          test: /\.twig$/,
+          loader: 'raw-loader'
         }
       ]
     },
@@ -126,7 +130,7 @@ module.exports = function (env) {
         basePath: basePath
       }),
       new WebpackShellPlugin({
-        onBuildEnd: [
+        onBuildExit: [
           'npm run source',
           'npm run twig'
         ]

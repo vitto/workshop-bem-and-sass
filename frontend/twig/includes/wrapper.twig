@@ -1,3 +1,12 @@
-<div class="wrapper">
-  {% include '../blocks/' ~ blockName ~ '.twig' %}
+<div class="layout-wrapper">
+  <div class="layout-wrapper__row">
+    <div class="layout-wrapper__infos">
+      <div class="layout-wrapper__title">
+        {{ blockName | capitalize | replace({'-': ' '}) }}
+      </div>
+    </div>
+    <div class="layout-wrapper__widget">
+      {% include '../blocks/' ~ blockName ~ '.twig' %}
+    </div>
+  </div>
 </div>

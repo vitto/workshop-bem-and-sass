@@ -1,5 +1,4 @@
 # Workshop SASS for BEM development with Vittorio Vittori @ CSSDay 2018
-
 A repo with examples to learn how to work with BEM in SASS
 
 ---

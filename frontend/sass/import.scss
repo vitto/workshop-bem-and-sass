@@ -1,3 +1,12 @@
 @import '_config/import';
+
+@import 'extends/layout-column';
+
 // @import 'vendors/some-vendor';
+@import 'blocks/button';
+@import 'blocks/layout-body';
+@import 'blocks/layout-header';
+@import 'blocks/layout-limiter';
+@import 'blocks/layout-logo';
+@import 'blocks/layout-wrapper';
 @import 'blocks/tooltip';

@@ -1,0 +1,30 @@
+@include block ('layout-header') {
+
+  align-items: center;
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+  @include element ('left') {
+    @extend %layout-column-left;
+  }
+
+  @include element ('right') {
+    @extend %layout-column-right;
+  }
+
+  @include element ('year') {
+    font-size: font-size('big');
+    font-weight: font-weight('bold');
+    letter-spacing: -2px;
+  }
+
+  @include element ('title') {
+    font-weight: font-weight('bold');
+  }
+
+  @include element ('teacher') {
+    color: $color-cyan-aqua;
+    font-weight: font-weight('bold');
+  }
+}
