@@ -1,13 +1,17 @@
 @include block ('layout-wrapper') {
-  $wrapper-border: 2px solid $color-tundora;
 
-  border-top: $wrapper-border;
+  border-top: $horizontal-border;
   margin-bottom: s(4);
 
   @include element ('row') {
-    display: flex;
+    @extend %layout-row;
     margin-left: s(-1);
     margin-right: s(-1);
+
+    @include media ('<tablet-small') {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   @include element ('infos') {
@@ -27,8 +31,6 @@
   }
 
   @include element ('title') {
-    font-size: font-size('big');
-    font-weight: font-weight('bold');
-    letter-spacing: -2px;
+    @extend %big-title;
   }
 }

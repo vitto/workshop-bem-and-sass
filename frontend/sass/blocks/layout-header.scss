@@ -1,9 +1,10 @@
 @include block ('layout-header') {
 
+  @extend %layout-row;
   align-items: center;
-  display: flex;
   margin-bottom: 50px;
   margin-top: 50px;
+  user-select: none;
 
   @include element ('left') {
     @extend %layout-column-left;
@@ -13,10 +14,25 @@
     @extend %layout-column-right;
   }
 
+  @include element ('mark') {
+    @extend %mark;
+
+    @include modifier ('year') {
+      border-radius: radius('small') radius('small') 0 0;
+      margin-bottom: s(-0.25);
+    }
+
+    @include modifier ('title') {
+      border-radius: 0 radius('small') radius('small') 0;
+    }
+
+    @include modifier ('teacher') {
+      border-radius: 0 0 radius('small') radius('small');
+    }
+  }
+
   @include element ('year') {
-    font-size: font-size('big');
-    font-weight: font-weight('bold');
-    letter-spacing: -2px;
+    @extend %large-title;
   }
 
   @include element ('title') {
@@ -24,7 +40,6 @@
   }
 
   @include element ('teacher') {
-    color: $color-cyan-aqua;
     font-weight: font-weight('bold');
   }
 }

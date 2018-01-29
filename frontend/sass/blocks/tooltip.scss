@@ -3,6 +3,7 @@
   $color-background: $color-scorpion;
   $color-title: $color-white;
   $color-text: mix($color-white, $color-scorpion, 65%);
+  $border: 0 0 0 1px $color-white;
   $arrow-size: 8px;
   $border-radius: 4px;
   $ease: 0.5s ease('out-expo');
@@ -65,6 +66,7 @@
   @include element ('balloon') {
     background-color: $color-background;
     border-radius: $border-radius;
+    box-shadow: $border;
     color: $color-title;
     font-size: 12px;
     left: -50%;

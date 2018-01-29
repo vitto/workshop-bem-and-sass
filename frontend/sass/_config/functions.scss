@@ -14,14 +14,15 @@
 
 @function radius($property) {
   @return get((
-      'button': 3px,
-      'box': 6px
+      'small': 3px,
+      'large': 6px
   ), $property);
 }
 
 @function font-size($property) {
   @return get((
       'big': 32px,
+      'large': 24px,
       'normal': 16px,
       'small': 12px
   ), $property);
