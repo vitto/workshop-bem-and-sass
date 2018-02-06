@@ -15,6 +15,7 @@
 @function radius($property) {
   @return get((
       'small': 3px,
+      'medium': 4px,
       'large': 6px
   ), $property);
 }

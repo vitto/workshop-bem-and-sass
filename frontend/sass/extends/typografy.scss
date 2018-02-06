@@ -16,3 +16,13 @@
   margin-left: s(-0.25);
   padding: s(0.125) s(0.25);
 }
+
+%small-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+%tiny-text {
+  font-size: 12px;
+  font-weight: 400;
+}

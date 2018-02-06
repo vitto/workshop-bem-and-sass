@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="maximum-scale=1,width=device-width,initial-scale=1,user-scalable=0">
+    <title>
+      
+    </title>
+    <link async rel="stylesheet" href="css/vendor-style.css?v=32d722ec-3f2d-4c7c-850b-f7b5d4652c59">
+    <link rel="stylesheet" href="css/style.css?v=b0fb488d-0929-42b2-a4f5-82546fb18ccb">
+  </head>
+
+  <body class="layout-body">
+    <header class="layout-header layout-limiter">
+  <div class="layout-header__left">
+    <img class="layout-logo" src="img/cssday-logo.svg">
+  </div>
+  <div class="layout-header__right">
+    <div class="layout-header__year">
+      <div class="layout-header__mark layout-header__mark--year">
+        CSSDay 2018
+      </div>
+    </div>
+    <div class="layout-header__title">
+      <div class="layout-header__mark layout-header__mark--title">
+        Workshop SASS for BEM development
+      </div>
+    </div>
+    <div class="layout-header__teacher">
+      <div class="layout-header__mark layout-header__mark--teacher">
+        Vittorio Vittori
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main class="layout-limiter">
+      <div class="layout-wrapper">
+  <div class="layout-wrapper__row">
+    <div class="layout-wrapper__infos">
+      <div class="layout-wrapper__title">
+        Button
+      </div>
+    </div>
+    <div class="layout-wrapper__widget">
+      <a href="#" class="button">Default button</a>
+
+<a href="#" class="button button--inline">Inline button</a>
+
+<a href="#" class="button button--inline button--action">Inline action button</a>
+
+<a href="#" class="button button--inline button--small">Small inline button</a>
+
+<a href="#" class="button button--inline button--outline">Outline inline button</a>
+
+<a href="#" class="button button--inline button--outline button--small">Outline small inline button</a>
+
+    </div>
+  </div>
+</div>
+      <div class="layout-wrapper">
+  <div class="layout-wrapper__row">
+    <div class="layout-wrapper__infos">
+      <div class="layout-wrapper__title">
+        Tooltip
+      </div>
+    </div>
+    <div class="layout-wrapper__widget">
+      <div>
+  <a href="#" class="button button--inline button--action tooltip">
+    Tooltip
+    <div class="tooltip__container">
+      <div class="tooltip__balloon">
+        Hello, this is a tooltip message, yes I know, it's very cool!
+      </div>
+    </div>
+  </a>
+
+  <a href="#" class="button button--inline button--action tooltip">
+    Tooltip rich
+    <div class="tooltip__container">
+      <div class="tooltip__balloon">
+        <div class="tooltip__title">
+          Important notice
+        </div>
+        <p class="tooltip__text">
+          Ahem, sorry, I just forgot what the notice was.
+        </p>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<a href="#" class="button button--inline button--action tooltip tooltip--show" style="margin-top: 64px;">
+    Tooltip shown by default
+    <div class="tooltip__container">
+      <div class="tooltip__balloon">
+        This is a tooltip opened by default.
+      </div>
+    </div>
+  </a>
+    </div>
+  </div>
+</div>
+      <div class="layout-wrapper">
+  <div class="layout-wrapper__row">
+    <div class="layout-wrapper__infos">
+      <div class="layout-wrapper__title">
+        Tag
+      </div>
+    </div>
+    <div class="layout-wrapper__widget">
+      <div class="tag">
+  <div class="tag__text">Tag with a very long text that is impossible to read</div>
+</div>
+
+<div class="tag">
+  <div class="tag__text">Tag</div>
+</div>
+
+<div class="tag tag--silent">
+  <div class="tag__text">Silent</div>
+</div>
+
+<div class="tag tag--error">
+  <div class="tag__text">Error</div>
+</div>
+
+<div class="tag tag--info">
+  <div class="tag__text">Information</div>
+</div>
+    </div>
+  </div>
+</div>
+    </main>
+
+    <header class="layout-footer layout-limiter">
+  <div class="layout-footer__left">
+    <img class="layout-logo" src="img/cssday-logo.svg">
+  </div>
+  <div class="layout-footer__right">
+    <dl class="layout-footer-menu">
+      <dt class="layout-footer-menu__title">
+        CSSDay
+      </dt>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="http://2018.cssday.it/#venue" target="_blank">
+          Location
+        </a>
+      </dd>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="http://2018.cssday.it/schedule.html" target="_blank">
+          Schedule
+        </a>
+      </dd>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="http://2018.cssday.it/talks.html" target="_blank">
+          Talks
+        </a>
+      </dd>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="http://2018.cssday.it/sponsor.html" target="_blank">
+          Sponsor
+        </a>
+      </dd>
+    </dl>
+
+    <dl class="layout-footer-menu">
+      <dt class="layout-footer-menu__title">
+        Vittorio Vittori
+      </dt>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="https://github.com/vitto/workshop-bem-and-sass" target="_blank">
+          Workshop material
+        </a>
+      </dd>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="https://www.linkedin.com/in/vittoriovittori/" target="_blank">
+          LinkedIn
+        </a>
+      </dd>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="https://www.facebook.com/vttrx" target="_blank">
+          Facebook
+        </a>
+      </dd>
+      </dd>
+      <dd class="layout-footer-menu__item">
+        <a class="layout-footer-menu__link" href="https://twitter.com/vttrx" target="_blank">
+          Twitter
+        </a>
+      </dd>
+    </dl>
+  </div>
+</header>
+  </body>
+</html>

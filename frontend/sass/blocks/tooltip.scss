@@ -64,6 +64,8 @@
   }
 
   @include element ('balloon') {
+    @extend %tiny-text;
+
     background-color: $color-background;
     border-radius: $border-radius;
     box-shadow: $border;
@@ -95,6 +97,7 @@
   @include element ('title') {
     color: $color-title;
   }
+
   @include element ('text') {
     border-top: 1px solid $color-title;
     color: $color-text;
