@@ -26,6 +26,11 @@
   "bugs": {
     "url": "https://github.com/vitto/workshop-bem-and-sass/issues"
   },
+  "standard": {
+    "globals": [
+      "$"
+    ]
+  },
   "homepage": "https://github.com/vitto/workshop-bem-and-sass#readme",
   "dependencies": {
     "frontsize": "^4.0.4",

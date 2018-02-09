@@ -23,7 +23,7 @@ module.exports = function (env) {
   return {
     entry: {
       'js/app': [
-        path.join(__js, '/modal.js')
+        path.join(__js, '/buttons.js')
       ],
       'js/vendor': [
         path.join(__modules, '/jquery/dist/jquery.js')

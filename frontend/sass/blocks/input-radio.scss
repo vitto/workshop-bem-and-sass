@@ -1,4 +1,4 @@
-@include block ('input-checkbox') {
+@include block ('input-radio') {
 
   $icon-hover-color: $color-curious-blue;
   $hover-background: rgba($color-curious-blue, 0.15);
@@ -17,21 +17,21 @@
   @include element ('field') {
     display: none;
 
-    & + .input-checkbox__icon {
+    & + .input-radio__icon {
       display: inline-block;
     }
 
-    & + .input-checkbox__icon + .input-checkbox__icon {
+    & + .input-radio__icon + .input-radio__icon {
       color: $icon-hover-color;
       display: none;
     }
 
     &:checked {
-      & + .input-checkbox__icon {
+      & + .input-radio__icon {
         display: none;
       }
 
-      & + .input-checkbox__icon + .input-checkbox__icon {
+      & + .input-radio__icon + .input-radio__icon {
         display: inline-block;
       }
     }
