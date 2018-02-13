@@ -1,8 +1,0 @@
-@include block ('layout-body') {
-  color: $color-tundora;
-  font-size: font-size('normal');
-
-  @include modifier ('no-scroll') {
-    overflow: hidden;
-  }
-}

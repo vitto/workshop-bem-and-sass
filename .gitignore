@@ -1,6 +1,7 @@
+.vscode
 *.log
 *.log.*
-.vscode
+dist
 frontend/assets
 frontend/build
 frontend/source
