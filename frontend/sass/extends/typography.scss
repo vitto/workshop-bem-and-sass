@@ -1,0 +1,28 @@
+%big-title {
+  font-size: font-size('big');
+  font-weight: font-weight('bold');
+  letter-spacing: -2px;
+}
+
+%large-title {
+  font-size: font-size('large');
+  font-weight: font-weight('bold');
+  letter-spacing: -1px;
+}
+
+%mark {
+  background-color: $color-cyan-aqua;
+  display: inline-block;
+  margin-left: s(-0.25);
+  padding: s(0.125) s(0.25);
+}
+
+%small-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+%tiny-text {
+  font-size: 12px;
+  font-weight: 400;
+}

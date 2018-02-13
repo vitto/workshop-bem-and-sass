@@ -1,0 +1,36 @@
+@include block ('layout-wrapper') {
+
+  border-top: $horizontal-border;
+  margin-bottom: s(4);
+
+  @include element ('row') {
+    @extend %layout-row;
+    margin-left: s(-1);
+    margin-right: s(-1);
+
+    @include media ('<tablet-small') {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @include element ('infos') {
+    @extend %layout-column-left;
+  }
+
+  @include element ('widget') {
+    @extend %layout-column-right;
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+    > * + * {
+      margin-top: s(1);
+    }
+  }
+
+  @include element ('title') {
+    @extend %big-title;
+  }
+}

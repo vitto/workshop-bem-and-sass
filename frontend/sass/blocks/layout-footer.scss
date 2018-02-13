@@ -1,0 +1,19 @@
+@include block ('layout-footer') {
+
+  @extend %layout-row;
+  align-items: flex-start;
+  border-top: $horizontal-border;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding-top: 50px;
+  user-select: none;
+
+  @include element ('left') {
+    @extend %layout-column-left;
+  }
+
+  @include element ('right') {
+    @extend %layout-column-right;
+    display: flex;
+  }
+}
