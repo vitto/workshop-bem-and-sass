@@ -1,0 +1,112 @@
+@include block ('tag') {
+
+  @function tag($property) {
+    @return get((
+        'default-background': $color-tundora,
+        'default-color': $color-white,
+        'silent-background': mix($color-tundora, $color-white, 25%),
+        'silent-color': $color-tundora,
+        'error-background': $color-alizarin-crimson,
+        'error-color': $color-white,
+        'success-background': $color-atlantis,
+        'success-color': $color-tundora,
+        'info-background': $color-curious-blue,
+        'info-color': $color-white
+    ), $property);
+  }
+
+  @mixin tag-modifier ($modifier) {
+    @include modifier ($modifier) {
+      background-color: tag('#{$modifier}-background');
+      color: tag('#{$modifier}-color');
+
+      &::after {
+        border-right-color: tag('#{$modifier}-background');
+      }
+    }
+  }
+
+  $dot-color: $color-white;
+  $remove-button-color: $color-tundora;
+  $remove-button-background: transparent;
+  $remove-button-color-hover: $color-white;
+  $remove-button-background-hover: $color-alizarin-crimson;
+
+  $max-text-width: 220px;
+  $height: 40px;
+
+  @extend %tiny-text;
+
+  align-items: center;
+  background-color: tag('default-background');
+  border-radius: 0 radius('small') radius('small') 0;
+  color: tag('default-color');
+  display: inline-flex;
+  line-height: $height;
+  margin-left: s(0.5);
+  margin-right: s(0.5);
+  margin-top: s(0.25);
+  padding: 0 s(0.25) 0 s(0.5);
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+
+  &::after {
+    $size: $height / 2;
+    border: solid transparent;
+    border-right-color: tag('default-background');
+    border-width: $size;
+    content: '';
+    display: block;
+    height: 0;
+    margin-top: -($size);
+    pointer-events: none;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    width: 0;
+  }
+
+  &::before {
+    $size: $height / 4;
+    $top: $height / 2.5;
+    background-color: $dot-color;
+    border-radius: $size;
+    content: '';
+    display: block;
+    height: $size;
+    left: 0;
+    position: absolute;
+    top: $top;
+    width: $size;
+    z-index: 1;
+  }
+
+  @include tag-modifier('default');
+  @include tag-modifier('error');
+  @include tag-modifier('info');
+  @include tag-modifier('silent');
+  @include tag-modifier('success');
+
+  @include element ('text') {
+    max-width: $max-text-width;
+    overflow: hidden;
+    padding: 0 s(0.5);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @include element ('remove') {
+    background-color: $remove-button-background;
+    border-radius: radius('small');
+    color: $remove-button-color;
+    cursor: pointer;
+    font-size: inherit;
+    margin-left: 4px;
+
+    &:hover {
+      background-color: $remove-button-background-hover;
+      color: $remove-button-color-hover;
+    }
+  }
+}
