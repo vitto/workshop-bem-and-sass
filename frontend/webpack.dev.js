@@ -13,27 +13,18 @@ const WebpackShellPlugin = require('webpack-shell-plugin')
 const __modules = path.join(__dirname, '/../node_modules')
 const __dist = path.join(__modules, '/metalsmith/assets')
 const __images = path.join(__dirname, '/img')
-const __js = path.join(__dirname, '/js')
-const __sass = path.join(__dirname, '/sass')
-const __twig = path.join(__dirname, '/twig')
 const publicPath = path.join(__dirname, '../')
 const basePath = '/'
+
+const dependencies = require('./dependencies')
 
 module.exports = function (env) {
   return {
     entry: {
-      'js/app': [
-        path.join(__js, '/buttons.js')
-      ],
-      'js/vendor': [
-        path.join(__modules, '/jquery/dist/jquery.js')
-      ],
-      'css/style': [
-        path.join(__sass, '/import.scss')
-      ],
-      'css/vendor-style': [
-        path.join(__modules, '/material-design-icons/iconfont/material-icons.css')
-      ]
+      'js/app': dependencies.js.app,
+      'js/vendor': dependencies.js.vendor,
+      'css/style': dependencies.css.theme,
+      'css/vendor-style': dependencies.css.vendor
     },
     output: {
       path: __dist,
@@ -135,10 +126,7 @@ module.exports = function (env) {
           'npm run twig'
         ]
       }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery'
-      }),
+      new webpack.ProvidePlugin(dependencies.js.provider),
       new BrowserSyncPlugin({
         host: 'localhost',
         port: 8000,

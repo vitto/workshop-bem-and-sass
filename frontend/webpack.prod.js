@@ -20,18 +20,10 @@ const basePath = '/'
 module.exports = function (env) {
   return {
     entry: {
-      'js/app': [
-        path.join(__js, '/modal.js')
-      ],
-      'js/vendor': [
-        path.join(__modules, '/jquery/dist/jquery.js')
-      ],
-      'css/style': [
-        path.join(__sass, '/import.scss')
-      ],
-      'css/vendor-style': [
-        path.join(__modules, '/material-design-icons/iconfont/material-icons.css')
-      ]
+      'js/app': dependencies.js.app,
+      'js/vendor': dependencies.js.vendor,
+      'css/style': dependencies.css.theme,
+      'css/vendor-style': dependencies.css.vendor
     },
     output: {
       path: __dist,
@@ -131,10 +123,7 @@ module.exports = function (env) {
         },
         comments: false
       }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery'
-      }),
+      new webpack.ProvidePlugin(dependencies.js.provider),
       new ManifestPlugin({
         basePath: basePath
       }),
