@@ -1,5 +1,14 @@
 @include block ('tooltip') {
 
+  @function input-switch($property) {
+    @return get((
+        'default-ball': $color-curious-blue,
+        'box-unchecked': mix($color-tundora, $color-white, 25%),
+        'dot-checked': $color-white,
+        'dot-unchecked': $color-white
+    ), $property);
+  }
+
   $color-background: $color-scorpion;
   $color-title: $color-white;
   $color-text: mix($color-white, $color-scorpion, 65%);
@@ -91,6 +100,10 @@
       position: absolute;
       top: 100%;
       width: 0;
+    }
+
+    @include modifier ('warning') {
+
     }
   }
 

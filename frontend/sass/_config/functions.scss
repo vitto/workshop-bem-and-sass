@@ -1,6 +1,7 @@
 @function tween($property) {
   @return get((
       'hover': 0.5s ease('out-expo'),
+      'click': 0.25s ease('out-expo'),
       'movement': 0.75s ease('in-out-quint')
   ), $property);
 }

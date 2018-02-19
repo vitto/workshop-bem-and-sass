@@ -1,0 +1,65 @@
+@include block ('input-switch') {
+
+  @function input-switch($property) {
+    @return get((
+        'box-checked': $color-curious-blue,
+        'box-unchecked': mix($color-tundora, $color-white, 25%),
+        'dot-checked': $color-white,
+        'dot-unchecked': $color-white
+    ), $property);
+  }
+
+  $dot-size: 20px;
+  $padding-size: (radius('large') - radius('small'));
+
+  align-items: center;
+  display: inline-flex;
+
+  @include element ('field') {
+    display: none;
+
+    &:checked {
+      & + .input-switch__box {
+        background-color: input-switch('box-checked');
+
+        .input-switch__dot {
+          background-color: input-switch('dot-checked');
+          transform: translate(100%, 0);
+        }
+      }
+    }
+  }
+
+  @include element ('box') {
+    background-color: input-switch('box-unchecked');
+    border-radius: radius('large');
+    cursor: pointer;
+    flex-shrink: 0;
+    line-height: 0;
+    margin-right: s(0.5);
+    padding: $padding-size;
+    transition: background-color tween('click');
+    width: (($dot-size + $padding-size) * 2);
+
+    &:hover {
+      @include element ('dot') {
+        background-color: input-switch('dot-checked');
+      }
+    }
+  }
+
+  @include element ('dot') {
+    background-color: input-switch('dot-unchecked');
+    border-radius: radius('small');
+    display: inline-block;
+    height: $dot-size;
+    line-height: 0;
+    transition: background-color tween('click'), transform tween('click');
+    width: $dot-size;
+  }
+
+  @include element ('text') {
+    @extend %small-text;
+    cursor: pointer;
+  }
+}
