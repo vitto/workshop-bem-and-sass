@@ -42,16 +42,25 @@ module.exports = function (env) {
           test: /\.scss$/,
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader'/*, 'postcss-loader'*/]
+            use: [
+              { loader: 'css-loader', options: { minimize: true } },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  ident: 'postcss',
+                  plugins: () => [ autoprefixer({ browsers: ['last 3 versions'] }) ]
+                }
+              },
+              { loader: 'sass-loader' }
+            ]
           }),
           exclude: __modules
         }, {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader']
+            use: [{ loader: 'css-loader' }]
           })
-          // exclude: __dirname + '/src'
         }, {
           test: /\.[ot]tf$/,
           loader: 'url-loader',
@@ -107,15 +116,15 @@ module.exports = function (env) {
       ]
     },
     plugins: [
+      new webpack.LoaderOptionsPlugin({
+        options: {
+          postcss: [autoprefixer()]
+        }
+      }),
       new CopyWebpackPlugin([{
         from: __images,
         to: __dist + '/img'
       }]),
-      new webpack.LoaderOptionsPlugin({
-        options: {
-          postcss: [autoprefixer({ browsers: ['last 3 versions', 'iOS 9'] })]
-        }
-      }),
       new ExtractTextPlugin('[name].css'),
       new ManifestPlugin({
         basePath: basePath

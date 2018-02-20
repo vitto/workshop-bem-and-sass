@@ -1,0 +1,84 @@
+@include block ('input-select') {
+
+  $default-icon-background: $color-scorpion;
+  $default-icon-color: $color-white;
+  $default-select-background: $color-white;
+  $default-select-border: 1px solid $color-scorpion;
+  $default-select-color: $color-scorpion;
+
+  $focus-icon-background: $color-curious-blue;
+  $focus-icon-color: $color-white;
+  $focus-select-background: $color-white;
+  $focus-select-border: 1px solid $color-curious-blue;
+  $focus-select-color: $color-scorpion;
+
+  $default-select-height: 40px;
+  $small-select-height: 30px;
+
+  position: relative;
+
+  &:hover {
+    @include element ('field') {
+      border: $focus-select-border;
+      color: $focus-select-color;
+    }
+
+    @include element ('icon') {
+      background-color: $focus-icon-background;
+    }
+  }
+
+  @include modifier ('small') {
+    @include element ('field') {
+      border-radius: $small-select-height;
+      height: $small-select-height;
+    }
+
+    @include element ('icon') {
+      border-radius: 0 $small-select-height $small-select-height 0;
+      line-height: $small-select-height;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  @include element ('field') {
+    @extend %small-text;
+    appearance: none;
+    background-color: $default-select-background;
+    border: $default-select-border;
+    border-radius: radius('small');
+    box-sizing: border-box;
+    color: $default-select-color;
+    cursor: pointer;
+    height: $default-select-height;
+    padding: 0 s(2.5) 0 s(0.5);
+    transition: border tween('hover'), color tween('hover');
+    width: 100%;
+
+    &:focus {
+      background-color: $focus-select-background;
+      border: $focus-select-border;
+      color: $focus-select-color;
+      outline: 0;
+
+      & + .input-select__icon {
+        background-color: $focus-icon-background;
+      }
+    }
+  }
+
+  @include element ('icon') {
+    background-color: $default-icon-background;
+    border-radius: 0 radius('small') radius('small') 0;
+    color: $focus-icon-color;
+    line-height: $default-select-height;
+    padding: 0 s(0.5);
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background-color tween('hover'), color tween('hover');
+    z-index: 1;
+  }
+}

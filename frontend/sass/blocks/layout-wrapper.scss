@@ -8,7 +8,7 @@
     margin-left: s(-1);
     margin-right: s(-1);
 
-    @include media ('<tablet-small') {
+    @include media ('<=tablet-large') {
       margin-left: 0;
       margin-right: 0;
     }
