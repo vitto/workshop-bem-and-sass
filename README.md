@@ -32,6 +32,16 @@ Some of the plug-ins installed will need configuration files inside the project 
 
 ---
 
+## Play examples
+
+Go to [SassMeister.com](https://www.sassmeister.com/) and play with this [Frontsize component](https://github.com/ideatosrl/frontsize/blob/master/core/components/bem.scss)
+
+#### What is Frontsize?
+
+[Frontsize](https://github.com/ideatosrl/frontsize) is a tiny SASS framework written to build solid BEM code on CSS
+
+---
+
 ## Installation
 
 Clone the repo with the terminal:
