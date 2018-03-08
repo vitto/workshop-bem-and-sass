@@ -1,0 +1,67 @@
+@include block ('grid') {
+  $border-color-default: $color-tundora;
+  $border-color-faded-grid: mix($color-tundora, $color-white, 25%);
+  $border-color-faded-cell: mix($color-tundora, $color-white, 12%);
+  $border-size: 2px;
+
+  border: $border-size solid $border-color-default;
+  display: flex;
+  padding: 1px;
+  transition: border-color tween('hover');
+  width: 100%;
+
+  @include media ('<tablet-large') {
+    flex-wrap: wrap;
+  }
+
+  &:hover {
+    border-color: $border-color-faded-grid;
+
+    @include element ('cell') {
+      border-color: $border-color-faded-cell;
+    }
+  }
+
+  @include modifier ('normalize') {
+    @include element ('cell') {
+      flex-basis: 0;
+    }
+  }
+
+  @include modifier ('wrap') {
+    flex-wrap: wrap;
+  }
+
+  @include element ('cell') {
+    border: $border-size dashed $border-color-default;
+    flex-grow: 1;
+    margin: 1px;
+    padding: s(1);
+    transition: border-color tween('hover');
+
+    &:hover {
+      border-color: $border-color-default !important;
+    }
+
+    @include modifier ('tiny') {
+      width: 25%;
+    }
+
+    @include modifier ('half') {
+      width: 25%;
+    }
+
+    @include modifier ('almost') {
+      width: 75%;
+    }
+
+    @include modifier ('fill') {
+      width: 100%;
+    }
+
+    @include media ('<tablet-large') {
+      flex-basis: auto !important;
+      width: 100%;
+    }
+  }
+}
