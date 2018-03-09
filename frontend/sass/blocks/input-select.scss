@@ -42,6 +42,10 @@
     }
   }
 
+  @include modifier ('fill') {
+    width: 100%;
+  }
+
   @include element ('field') {
     @extend %small-text;
     appearance: none;

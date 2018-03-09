@@ -1,6 +1,7 @@
 @include block ('layout-body') {
   color: $color-tundora;
   font-size: font-size('normal');
+  font-weight: 300;
 
   @include modifier ('no-scroll') {
     overflow: hidden;
