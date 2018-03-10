@@ -74,10 +74,29 @@ To see the list of the workshop steps:
 git tag
 ```
 
+This is the list of every step of the workshop:
+
+```
+00-start-from-scratch
+01-exercise-results
+02-layout
+03-component-button
+04-component-tag
+05-component-tooltip
+06-component-input-checkbox
+07-component-input-radio
+08-component-input-switch
+09-component-input-select
+10-component-grid
+11-component-form
+12-component-input-text
+13-component-input-textarea
+```
+
 Just use this command to move on the workshop's step:
 
 ```
-git checkout workshop-step
+git checkout 00-start-from-scratch
 ```
 
 If you have some trouble with your code, you can restart the step with this command:
