@@ -1,0 +1,144 @@
+@include block ('input-text') {
+
+  @function input($property) {
+    @return get((
+        'default-blur-border': $color-scorpion,
+        'default-blur-text': $color-curious-blue,
+        'default-focus-border': $color-curious-blue,
+        'default-focus-text': $color-scorpion,
+        'error-blur-border': $color-alizarin-crimson,
+        'error-blur-text': $color-alizarin-crimson,
+        'error-focus-border': $color-carrot-orange,
+        'error-focus-text': $color-scorpion
+    ), $property);
+  }
+
+  @function icon($property) {
+    @return get((
+        'default-blur': $color-scorpion,
+        'default-focus': $color-curious-blue,
+        'error-blur': $color-alizarin-crimson,
+        'error-focus': $color-carrot-orange
+    ), $property);
+  }
+
+  @function message($property) {
+    @return get((
+        'default-blur-background': $color-scorpion,
+        'default-blur-text': $color-white,
+        'default-focus-background': $color-curious-blue,
+        'default-focus-text': $color-white,
+        'error-blur-background': $color-alizarin-crimson,
+        'error-blur-text': $color-white,
+        'error-focus-background': $color-carrot-orange,
+        'error-focus-text': $color-white
+    ), $property);
+  }
+
+  $placeholder: mix($color-scorpion, $color-white);
+  $border: 1px solid;
+  $height: 40px;
+  $height-textarea: 150px;
+  $height-textarea-max: 250px;
+
+  @mixin set-field ($modifier, $event) {
+    border: $border input('#{$modifier}-#{$event}-border');
+    color: input('#{$modifier}-#{$event}-text');
+  }
+
+  @mixin set-message ($modifier, $event) {
+    background-color: message('#{$modifier}-#{$event}-background');
+    color: message('#{$modifier}-#{$event}-text');
+  }
+
+  @mixin set-icon ($modifier, $event) {
+    color: icon('#{$modifier}-#{$event}');
+  }
+
+  @mixin set-block ($modifier) {
+    @include element ('field') {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      @include set-field($modifier, 'blur');
+
+      &:focus {
+        @include set-field($modifier, 'focus');
+
+        & + .input-text__icon {
+          @include set-icon($modifier, 'focus');
+
+          & + .input-text__message {
+            @include set-message($modifier, 'focus');
+          }
+        }
+
+        & + .input-text__message {
+          @include set-message($modifier, 'focus');
+        }
+      }
+    }
+
+    @include element ('message') {
+      display: block;
+      @include set-message($modifier, 'blur');
+    }
+
+    @include element ('icon') {
+      @include set-icon($modifier, 'blur');
+    }
+  }
+
+  @mixin set-modifier ($modifier) {
+    @include modifier ($modifier) {
+      @include set-block($modifier);
+    }
+  }
+
+  display: block;
+  position: relative;
+  width: 100%;
+
+  @include set-modifier('default');
+  @include set-modifier('error');
+
+  @include element ('field') {
+    @extend %small-text;
+    border: $border $color-scorpion;
+    border-radius: radius('small');
+    box-sizing: border-box;
+    color: $color-curious-blue;
+    height: $height;
+    padding: 0 s(2) 0 s(0.5);
+    transition: border tween('hover'), color tween('hover');
+    width: 100%;
+
+    &::placeholder {
+      @extend %small-text;
+      color: $placeholder;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  @include element ('icon') {
+    color: icon('default-blur');
+    pointer-events: none;
+    position: absolute;
+    right: s(0.5);
+    top: 8px;
+    transition: color tween('hover');
+  }
+
+  @include element ('message') {
+    @extend %small-text;
+    background-color: $color-scorpion;
+    border-radius: 0 0 radius('small') radius('small');
+    color: $color-white;
+    display: none;
+    line-height: 1.25;
+    padding: s(0.5);
+    transition: background-color tween('hover');
+  }
+}
