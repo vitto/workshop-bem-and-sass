@@ -95,6 +95,7 @@
   }
 
   display: block;
+  line-height: 0;
   position: relative;
   width: 100%;
 
@@ -119,6 +120,14 @@
 
     &:focus {
       outline: 0;
+    }
+
+    @include modifier ('textarea') {
+      height: $height-textarea;
+      max-height: $height-textarea-max;
+      min-height: $height-textarea;
+      padding: s(0.5) s(2) s(0.5) s(0.5);
+      resize: vertical;
     }
   }
 
