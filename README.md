@@ -24,7 +24,7 @@ apm install auto-update-packages bracket-matcher colornamer double-tag editorcon
 
 Adds this code to `keymap.cson` to add key support to installed plugins
 
-```
+```cson
 'atom-workspace':
   'cmd-shift-e': 'sort-lines:sort'
 
