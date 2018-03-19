@@ -27,6 +27,7 @@ Adds this code to `keymap.cson` to add key support to installed plugins
 ```cson
 'atom-workspace':
   'cmd-shift-e': 'sort-lines:sort'
+  'ctrl-cmd-o': 'tree-view-git-modified:openAll'
 
 '.platform-darwin':
   'cmd-i': 'tree-view:reveal-active-file'
