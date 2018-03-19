@@ -20,6 +20,19 @@ Additional [Atom](https://atom.io/) packages:
 apm install auto-update-packages bracket-matcher colornamer double-tag editorconfig file-icons highlight-bad-chars highlight-selected linter linter-csslint linter-htmlhint linter-js-yaml linter-sass-lint linter-scss-lint minimap minimap-cursorline minimap-find-and-replace minimap-git-diff minimap-pigments minimap-selection multi-highlight-selected nyan-indent php-twig pigments sort-lines tree-view-autoresize tree-view-git-modified tree-view-git-status
 ```
 
+##### Keymap
+
+Adds this code to `keymap.cson` to add key support to installed plugins
+
+```
+'atom-workspace':
+  'cmd-shift-e': 'sort-lines:sort'
+
+'.platform-darwin':
+  'cmd-i': 'tree-view:reveal-active-file'
+```
+
+
 ### Visual Studio Code
 
 Additional [Visual Studio Code](https://code.visualstudio.com/) packages:
