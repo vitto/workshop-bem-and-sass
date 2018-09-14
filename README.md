@@ -17,7 +17,7 @@ In order to dev the project you need a good text editor like
 Additional [Atom](https://atom.io/) packages:
 
 ```
-apm install auto-update-packages bracket-matcher colornamer double-tag editorconfig file-icons highlight-bad-chars highlight-selected linter linter-csslint linter-htmlhint linter-js-yaml linter-sass-lint linter-scss-lint minimap minimap-cursorline minimap-find-and-replace minimap-git-diff minimap-pigments minimap-selection multi-highlight-selected nyan-indent php-twig pigments sort-lines tree-view-autoresize tree-view-git-modified tree-view-git-status svg-preview
+apm install auto-update-packages bracket-matcher colornamer editorconfig file-icons highlight-bad-chars highlight-selected linter linter-csslint linter-htmlhint linter-js-yaml linter-sass-lint linter-scss-lint minimap minimap-cursorline minimap-find-and-replace minimap-git-diff minimap-pigments minimap-selection multi-highlight-selected nyan-indent php-twig pigments sort-lines tree-view-autoresize tree-view-git-modified tree-view-git-status svg-preview
 ```
 
 ##### Keymap
